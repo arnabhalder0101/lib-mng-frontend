@@ -42,144 +42,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Management</title>
+    <title>Library System - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         body {
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            background: linear-gradient(135deg, #1e1e2f, #4a4063);
             min-height: 100vh;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #f0f0f5;
+            overflow-x: hidden;
+        }
+        .navbar {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+        .navbar-nav {
+            margin-left: auto;
+        }
+        .nav-link {
+            color: #f0f0f5;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-left: 2rem;
+            transition: color 0.3s ease, transform 0.2s ease;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .nav-link:hover {
+            color: #d1c4e9;
+            transform: scale(1.05);
+        }
+        .hero {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-        }
-        .header {
-            background: linear-gradient(90deg, #007bff, #0056b3);
-            color: white;
-            padding: 1.5rem;
-            width: 100%;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-        .header h1 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            margin: 0;
-        }
-        .container {
-            margin-top: 6rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            width: 100%;
-            max-width: 600px;
-        }
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            border: none;
-        }
-        .card-title {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 2rem;
-        }
-        .auth-buttons {
-            display: flex;
             justify-content: center;
-            gap: 2rem;
-        }
-        .auth-card {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-            padding: 1.8rem;
+            min-height: calc(100vh - 80px);
             text-align: center;
-            width: 180px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
+            padding: 2rem;
         }
-        .auth-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.2);
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
-        .auth-card i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .hero p {
+            font-size: 1.25rem;
+            color: #d1c4e9;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
         }
-        .auth-card span {
-            font-size: 1.2rem;
-            font-weight: 500;
-            display: block;
+        .footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #d1c4e9;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .login-card {
-            background: linear-gradient(45deg, #007bff, #0056b3);
-        }
-        .login-card i, .login-card span {
-            color: white;
-        }
-        .register-card {
-            background: linear-gradient(45deg, #28a745, #218838);
-        }
-        .register-card i, .register-card span {
-            color: white;
-        }
-        @media (max-width: 576px) {
-            .container {
-                margin-top: 5rem;
-                padding: 0 1rem;
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 2rem;
             }
-            .card {
-                padding: 1.5rem;
-            }
-            .card-title {
-                font-size: 1.5rem;
-            }
-            .auth-card {
-                width: 140px;
-                padding: 1.2rem;
-            }
-            .auth-card i {
-                font-size: 2.5rem;
-            }
-            .auth-card span {
+            .nav-link {
+                margin-left: 1rem;
                 font-size: 1rem;
             }
-            .header h1 {
-                font-size: 1.5rem;
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Library Management</h1>
-    </div>
-    <div class="container">
-        <div class="card">
-            <h2 class="card-title">Welcome to Library Management</h2>
-            <div class="auth-buttons">
-                <a href="login.html" class="login-card auth-card">
-                    <i class="fas fa-sign-in-alt"></i>
-                    <span>Login</span>
-                </a>
-                <a href="register.html" class="register-card auth-card">
-                    <i class="fas fa-user-plus"></i>
-                    <span>Register</span>
-                </a>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Library System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">Admin Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">User Login</a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Welcome to the Library System</h1>
+        <p>Discover a world of knowledge with our exquisite collection. Elevate your experience with seamless access to books and resources.</p>
+    </div>
+
+    <div class="footer">
+        © 2025 Library Management System. All rights reserved.
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

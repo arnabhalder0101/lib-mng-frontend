@@ -1,0 +1,45 @@
+.navbar {
+  background-color: #692c2c;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.navbar .flex.items-center a:hover {
+  transform: scale(1.2);
+}
+
+.navbar .logo-link:hover {
+  color: #30ad84;
+  transform: scale(1.1);
+}
+
+.navbar .flex.items-center {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar #auth-btn {
+  color: white;
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.navbar #auth-btn:hover {
+  transform: scale(1.2);
+}

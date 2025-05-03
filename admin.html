@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Library Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body class="bg-gray-100">
+    <nav class="navbar">
+        <a href="index.html" class="text-xl font-bold logo-link">Library Management</a>
+        <div class="flex items-center">
+            <a href="admin-user_by_userid.html" class="px-3">User by UserID</a>
+            <a href="admin_users_by_bookid.html" class="px-3">Users by BookID</a>
+            <!-- <a href="donate-book.html" class="px-3">Donate</a> -->
+            <!-- <a href="admin.html" id="admin-link" class="px-3">Admin</a> -->
+            <button id="auth-btn" class="px-3">Login</button>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Admin Panel</h1>
+        <div id="admin-login-popup" class="popup">
+            <div class="popup-content">
+                <a href="index.html" class="home-btn">🏠</a>
+                <h2>Admin Login</h2>
+                <form id="admin-login-form">
+                    <div class="form-group">
+                        <label for="admin-email">Email</label>
+                        <input type="email" id="admin-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-password">Password</label>
+                        <input type="password" id="admin-password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Login</button>
+                    <div id="login-error" class="error hidden"></div>
+                </form>
+            </div>
+        </div>
+        <div id="admin-content" class="hidden">
+            <!-- <div class="search-section">
+                <h2>Search</h2>
+                <div class="search-form">
+                    <input type="text" id="search-input" placeholder="Enter User ID or Book ID" required>
+                    <div class="search-type">
+                        <label><input type="radio" name="search-type" value="user" checked> User ID</label>
+                        <label><input type="radio" name="search-type" value="book"> Book ID</label>
+                    </div>
+                    <button id="search-btn" class="search-btn">Search</button>
+                </div>
+                <div id="search-results" class="search-results"></div>
+            </div> -->
+            <div class="books-section">
+                <div class="section-header">
+                    <h2>All Books </h2>
+                    <!-- (<span class="count" data-target="books-count">0</span>) -->
+                    <button class="toggle-btn" data-target="books-table-container">▼</button>
+                </div>
+                <div id="books-table-container" class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Book ID</th>
+                                <th>Name</th>
+                                <th>Author</th>
+                                <th>Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody id="books-table"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="users-section">
+                <div class="section-header">
+                    <h2>All Users</h2>
+                    <!-- (<span class="count" data-target="users-count">0</span>) -->
+                    <button class="toggle-btn" data-target="users-table-container">▼</button>
+                </div>
+                <div id="users-table-container" class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <!-- <th>User ID</th> -->
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Books Borrowed</th>
+                                <th>Gender</th>
+                                <th>City</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users-table"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>
