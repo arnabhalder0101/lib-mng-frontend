@@ -252,11 +252,12 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
+                const dataResp = await response.json();
 
                 if (!response.ok) {
-                    const errorText = await response.text();
-                    console.log('Error response:', errorText);
-                    throw new Error(`Registration failed: ${errorText}`);
+                    // const errorText = await response.text();
+                    // console.log('Error response:', errorText);
+                    throw new Error(`Registration failed: ${dataResp.msg}`);
                 }
 
                 messageDiv.innerHTML = '<div class="alert alert-success">Registration successful! You may login now.</div>';

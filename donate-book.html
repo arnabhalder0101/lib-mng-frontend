@@ -245,7 +245,7 @@
                     messageDiv.classList.add('text-success');
                     messageDiv.classList.remove('text-danger');
                 } else {
-                    throw new Error(data.error || 'Failed to donate book');
+                    throw new Error(data.error || `${data.msg}`);
                 }
             } catch (error) {
                 messageDiv.textContent = error.message;
