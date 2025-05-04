@@ -227,11 +227,12 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
+                const dataResp = await response.json();
 
                 if (!response.ok) {
                     const errorText = await response.text();
                     console.log('Error response:', errorText);
-                    throw new Error(`Login failed: ${errorText}`);
+                    throw new Error(`Login failed: ${dataResp.msg}`);
                 }
 
                 localStorage.setItem('userEmail', email); // Store email for dashboard
